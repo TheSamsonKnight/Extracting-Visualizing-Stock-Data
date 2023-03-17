@@ -1,0 +1,85 @@
+Tesla_table = pd.read_html("https://www.macrotrends.net/stocks/charts/TSLA/tesla/revenue", match = "Tesla Quarterly Revenue")
+Tesla_table
+
+ 0   Tesla Quarterly Revenue(Millions of US $)    49 non-null     object
+ 1   Tesla Quarterly Revenue(Millions of US $).1  47 non-null     object
+
+
+
+Tesla_table = pd.read_html("https://www.macrotrends.net/stocks/charts/TSLA/tesla/revenue", match = "Tesla Quarterly Revenue")
+#Tesla_revenue = Tesla_table[0]
+#Tesla_revenue.head()
+#Tesla_revenue.info()
+Tesla_revenue.rename(columns={"Tesla Quarterly Revenue(Millions of US $":"Date", "Tesla Quarterly Revenue(Millions of US $).":"Revenue"})
+Tesla_revenue.head(
+
+
+
+????
+Tesla_table = beautiful_soup.find_all("tbody")[1]
+Tesla_table
+#Tesla_revenue = pd.DataFrame(columns = ["Date", "Revenue"])
+#for row in Tesla_table.find_all("tr"):
+#    col = row.find_all("td")
+#    date = col[0].text
+#    revenue = col[1].text
+    
+#Tesla_revenue
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+right code, wrong table
+
+Tesla_revenue = pd.DataFrame(columns=["Date", "Revenue"])
+
+for row in beautiful_soup.find("tbody").find_all('tr'):
+    col = row.find_all("td")
+    date = col[0].text
+    revenue = col[1].text
+    
+    Tesla_revenue = Tesla_revenue.append({"Date":date, "Revenue":revenue}, ignore_index=True) 
+
+Tesla_revenue
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+data = []
+table = soup.find('table', attrs=('class':'lineItemsTable'})
+table_body= table.find('tbody')
+
+rows = table_body.find_all('tr');
+for row in rows
+
+=====================================================================================
+Tesla_revenue = Tesla_table
+Tesla_revenue
+
+
+Tesla_table = beautiful_soup.find_all("tbody")[1]
+Tesla_table = pd.DataFrame(columns = ["Date", "Revenue"])
+for row in beautiful_soup.find_all("tbody")[1].find_all("tr"):
+    col = row.find_all("td")
+    date = col[0].text
+    revenue = col[1].text
+Tesla_table
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gamestop
+
+Tesla_revenue = pd.DataFrame(columns=["Date", "Revenue"])
+
+for row in beautiful_soup.find("tbody").find_all('tr'):
+    col = row.find_all("td")
+    date = col[0].text
+    revenue = col[1].text
+    
+    Tesla_revenue = Tesla_revenue.append({"Date":date, "Revenue":revenue}, ignore_index=True) 
+
+Tesla_revenue
+
+Gamestop_revenue = pd.DataFrame(columns=["Date", "Revenue"])
+
+for row in beautiful_soup2.find("tbody).find_all("tr"):
+	col = row.find_all("td")
+	date = col[0].text
+	revenue = col[1].text
+
+Gamestop_revenue

@@ -1,0 +1,44 @@
+!pip install yfinance
+
+import yfinance as yf
+import pandas as pd
+
+apple = yf.Ticker("AAPL")
+
+apple_info=apple.info
+apple_info
+
+apple_info['country']
+
+apple_share_price_data = apple.history(period="max")
+
+apple_share_price_data.head()
+
+apple_share_price_data.reset_index(inplace=True)
+
+apple_share_price_data.plot(x="Date", y="Open")
+
+apple.dividends
+
+apple.dividends.plot()
+
+================================
+amd = yf.Ticker("AMD")
+amd_info = amd.info
+amd.info
+amd.info['country']
+amd.info['sector']
+amd_share_price_data = amd.history(period="max")
+amd_share_price_data.head()
+		https://stackoverflow.com/questions/66873542/find-max-volume-python-yfinance
+		3.250584e+08
+
+amd_share_price_data.reset_index(inplace=True)
+amd_share_price_data.plot(x="Date", y="Open")
+amd.dividends
+amd.dividends.plot()
+
+=======================================
+
+AMD__share_price_data = AMD.history(period="max")
+AMD__share_price_data.loc[AMD__share_price_data['Volume'] == AMD__share_price_data['Volume'].max()]

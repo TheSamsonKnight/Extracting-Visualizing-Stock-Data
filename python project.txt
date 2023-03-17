@@ -1,0 +1,38 @@
+#!pip install pandas
+#!pip install requests
+!pip install bs4
+
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+
+html_data = "< >"
+
+soup = BeatifulSoup(html_data, 'html5lib')
+tag_object = soup.title
+
+amazon_data = pd.DataFrame(columns=["Date", "Open", "High", "Low", "Close", "Volume"])
+
+for row in soup.find("tbody").find_all("tr"):
+    col = row.find_all("td")
+    date =col[0].text
+    Open =col[1].text
+    high =col[2].text
+    low = col[3].text
+    close =col[4].text
+    adj_close =col[5].text
+    volume =col[6].text
+==================================================================================
+!pip install yfinance
+
+import yfinance as yf
+import pandas as pd
+
+apple = yf.Ticker("AAPL")
+
+apple_info=apple.info
+
+
+apple_share_price_data = apple.history(period="max")
+
+apple_share_price_data.head()
